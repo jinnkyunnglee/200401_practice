@@ -1,0 +1,121 @@
+body, ul, h3, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-image: url(img/bg.png);
+  color: grey;
+}
+
+.wrapper {
+  max-width:1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.timeline {
+  padding: 50px 0;
+  margin: 0 -40px;
+  position: relative;
+}
+
+.timeline:before {
+  /*가상요소 활용 */
+  content: ' ';
+  background-color: grey;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  margin: 100px 0 -100px;
+  width: 6px;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.timeline-item:before {
+  content: ' ';
+  background: white;
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid grey;
+  margin: 40px -20px;
+}
+
+.timeline-item:after {
+  content: '';
+  background-color: grey;
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 5px;
+  top: 55px;
+  margin: 0 30px;
+}
+
+.timeline-item:nth-child(even) {
+  /* 짝수만 선택하겠다. */
+  margin-left: auto;
+  margin-top: -250px;
+  margin-bottom: -250px;
+}
+
+.timeline-item:nth-child(even):before,
+.timeline-item:nth-child(even):after
+ {
+  left: 0;
+}
+
+.color {
+  background-color: black;
+  min-height: 400px;
+}
+
+.color-cover {
+  width: 100%;
+}
+.color-content {
+  padding: 25px;
+}
+.color-content p {
+  line-height: 1.4;
+  font-size: 13px;
+}
+.color-content h1 {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+.color-content h3 strong {
+  display: black;
+  font-size: 20px;
+}
+
+@media (max-width: 720px) {
+    .timeline-item:nth-child(even),
+    .timeline-item {
+      width: auto;
+      margin: 0 0 40px 50px;
+    }
+    .timeline:before {
+      left: 48px;
+      transform: none;
+    }
+    .timeline-item:after,
+    .timeline-item:before {
+      left: 0;
+    }
+}
