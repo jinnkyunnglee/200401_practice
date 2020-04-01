@@ -1,4 +1,2 @@
 # jk-Lee
-# my practice record
-# BOX 
-# color page
+# my practice record - BOX and color page
